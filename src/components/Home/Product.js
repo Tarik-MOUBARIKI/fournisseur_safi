@@ -12,27 +12,43 @@ const Product=()=> {
   const [products, setProducts] = useState();
   const [listProduct, setListProducts] = useState();
 
-  const id=localStorage.getItem('idCategory');
+  const idCategory=localStorage.getItem('idCategory');
+  const [quantity, setQuantity] = useState();
+  const idEpicier=localStorage.getItem('idEpicier');
+  const [type, setType] = useState();
+  const [typeSelected, setTypeSelected] = useState();
 
 useEffect(()=>{
 
-  axios.get(`http://localhost:5050/product/getProductByCategory/${id}`)
+  axios.get(`http://localhost:5050/product/getProductByCategory/${idCategory}`)
     .then(function (response) {
         
       setProducts(response.data)
       setListProducts(response.data.length)
-    console.log(response.data.length);
+      // setIdProduct(response.data.price);
+      console.log(response.data);
     }).catch(function (err) {
       console.log(err);
   });
   
-  },[id])
-//   const getIdProduct= (id)=>{
-//     localStorage.setItem('idProduct',id);
-//     history.push('/detailsProduct');
-  
-//   }
-    
+  },[idCategory])
+
+	const handleSubmit = (id) => {
+
+    const cart = {quantity,customer:idEpicier,product:id,type:typeSelected};
+
+
+    axios.post(`http://localhost:5050/cart/addToCart`,cart)
+		.then(res => {
+      if(res.error){
+				return false
+			}else{
+        console.log(res.data);
+      			}
+
+    })
+  }
+   
 
     return (
       <section className="text-gray-600 body-font bg-gray-200">
@@ -44,18 +60,39 @@ useEffect(()=>{
 
     <div className="flex flex-wrap -m-4">
     { products && products.map(item =>(
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+      <div className="lg:w-1/5 md:w-1/2 ml-1 mt-4 p-4 " style={{background:'white',borderRadius:'7%',width:'19%'}}>
+
+        <form onSubmit = {(e)=>{e.preventDefault();handleSubmit(item._id)}}>
         <a className="block relative h-48 rounded overflow-hidden">
           <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={item.productImg} style={{borderRadius:"30px",height:'220px'}} />
         </a>
         <div className="mt-4">
-         <Link to='/detailsProduct'><h2 className="text-gray-500 text-xs tracking-widest title-font mb-1">{item.category.nameCategorie}</h2></Link> 
-          <Link to='/DetailsProduct'><h2 className="text-gray-900 title-font text-lg font-medium">{item.titel}</h2></Link>
-          <Link to='/DetailsProduct'><p className="mt-1" style={{fontSize:'33px',color:'black'}}>{item.price} DH</p></Link>
+         <h2 className="text-gray-500 text-xs tracking-widest title-font mb-1">{item.category.nameCategorie}</h2>
+          <h2 className="text-gray-900 title-font text-lg font-medium">{item.titel}</h2>
+          <p className="mt-1" style={{fontSize:'33px',color:'black'}}>{item.price} DH</p>
+
+          <select className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+            value={typeSelected}
+            onChange={e => setTypeSelected(e.target.value)}
+            
+            >
+              <option value="Pack 0.5L">Pack 0.5L</option>
+              <option value="Pack 1L">Pack 1L</option>
+              <option value="Pack 1.5L">Pack 1.5L</option>
+              <option value="Pack 2L">Pack 2L</option>
+            </select>
+          <input type="number" min="1" placeholder="Quantity"  required 
+            value={quantity}
+            onChange={e => setQuantity(e.target.value)} 
+            style={{background:'#c9c9c9',textAlign:'center',borderRadius:'5px',width:'50%'}}
+            /> 
+
           <div className="flex items-center gap-4 my-6 cursor-pointer ">
-                <div className="bg-blue-600 px-5 py-3 text-white rounded-lg w-2/4 text-center">Add to bag</div>
+                <button type="submit" className="bg-blue-600 px-5 py-3 text-white rounded-lg w-2/4 text-center">Add to Cart </button>
             </div>
         </div>
+        </form>
+
       </div>
     ))}
     </div>

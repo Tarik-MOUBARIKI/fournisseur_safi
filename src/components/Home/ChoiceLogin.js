@@ -17,7 +17,7 @@ const ChoiceLogin =()=> {
        </div>
        <div class="p-4 lg:w-1/2 mt-5">
          <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-         <Link to='/signInCustomer' className="rounded px-3 py-2 m-1 border-b-4 border-l-2 shadow-lg font-bold  mt-4 hover:bg-black-700 lg:mt-0">
+         <Link to='/loginCustomer' className="rounded px-3 py-2 m-1 border-b-4 border-l-2 shadow-lg font-bold  mt-4 hover:bg-black-700 lg:mt-0">
              EPICIER
         </Link>
         
