@@ -28,17 +28,17 @@ export default function NavBar() {
 
 <nav className="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full">
   <div className="mb-2 sm:mb-0">
-    <a href="/home" className="text-2xl no-underline text-grey-darkest hover:text-blue-dark"><img src={logo} style={{width:"20%"}}/></a>
+    <a href="/" className="text-2xl no-underline text-grey-darkest hover:text-blue-dark"><img src={logo} style={{width:"20%"}}/></a>
   </div>
 
 {token  && <>
 
     <div className="flex ">
     <Link onClick={cart}  className="block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-green-700 lg:mt-0">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="" />
-      </svg>
-      Ma Facture
+    <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+       Facture
     </Link>
 
       <Link onClick={logOut} className="block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-green-700 lg:mt-0">
@@ -59,7 +59,7 @@ export default function NavBar() {
    }
    { !token  && <>    
       <div className="flex ">
-       <Link to='/compte' className="block text-md px-4 py-2 rounded text-red-700 ml-2 font-bold hover:text-white mt-4 hover:bg-black lg:mt-0">Sign up</Link>
+       <Link to='/signInCustomer' className="block text-md px-4 py-2 rounded text-red-700 ml-2 font-bold hover:text-white mt-4 hover:bg-black lg:mt-0">Sign up</Link>
        <Link to='/choiceLogin' className=" block text-md px-4  ml-2 py-2 rounded text-red-700 font-bold hover:text-white mt-4 hover:bg-black lg:mt-0">Sign in </Link>      
       </div>
     </>

@@ -28,7 +28,7 @@ import EditProductPromo from '../Fournisseur/EdiProductPromo';
 // import Components Home & Products
 import Home from '../Home/Home'
 import Product from '../Home/Product'
-import Compte from '../Home/Compte'
+
 import ChoiceLogin from '../Home/ChoiceLogin'
 import DetailsProduct from '../Home/DetailsProduct'
 import EditProduct from '../Fournisseur/EditProduct';
@@ -79,7 +79,7 @@ function Routes () {
 
             <Route path="/" exact component={Home} />
             <Route path="/productByCategory/:category" exact component={SearchProductByCategory} />
-            <Route path="/compte" exact component={Compte} />
+            
             <Route path="/choiceLogin" exact component={ChoiceLogin} />           
             <Route  path="/detailsProduct" exact component={DetailsProduct} />
             <Route  path="/product" exact component={Product} />

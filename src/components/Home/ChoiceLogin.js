@@ -4,7 +4,8 @@ import { Link,useHistory } from 'react-router-dom';
 const ChoiceLogin =()=> {
     return (
         
-   <section class="text-gray-600 body-font" style={{marginTop:'8%'}}>
+   <section class="text-gray-600 body-font bg-gray-300" style={{marginTop:'8%'}}>
+     <h2 style={{textAlign:"center",fontSize:"40px",color:"black",marginTop:"5%"}}>Login</h2>
    <div class="container px-5 py-24 mx-auto">
      <div class="flex flex-wrap -m-4 mt-5">
        <div class="p-4 lg:w-1/2 mt-5">
@@ -23,7 +24,7 @@ const ChoiceLogin =()=> {
         
          </div>
        </div>
-       <Link to='/compte' className="rounded px-3 py-2 m-1 border-b-4 border-l-2 shadow-lg font-bold hover:text-white mt-4 hover:bg-green-700 lg:mt-0" style={{marginLeft:876,width:165}} >
+       <Link to='/signInCustomer' className="rounded px-3 py-2 m-1 border-b-4 border-l-2 shadow-lg font-bold hover:text-white mt-4 hover:bg-green-700 lg:mt-0" style={{marginLeft:690,width:165}} >
         Create an account
         </Link>
      </div>

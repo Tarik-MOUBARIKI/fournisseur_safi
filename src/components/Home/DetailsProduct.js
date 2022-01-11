@@ -42,8 +42,8 @@ return (
         <table className="min-w-max w-full table-auto">
           <thead>
             <tr className="bg-gray-200 text-gray-600  text-sm leading-normal">
-              {/* <th className="py-3 px-6 text-left">image Product</th>
-              <th className="py-3 px-6 text-center">name</th>               */}
+              <th className="py-3 px-6 text-left">image Product</th>
+              <th className="py-3 px-6 text-center">name</th>              
               <th className="py-3 px-6 text-center">Price</th>
               <th className="py-3 px-6 text-center">Quantity</th>
               <th className="py-3 px-6 text-center">Type</th>
@@ -56,18 +56,18 @@ return (
 
             <tr className="border-b border-gray-200 hover:bg-gray-100">
 
-              {/* <td className="py-3 px-6 text-left whitespace-nowrap">
-              <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={item.product.productImg} />
+              {/* { <td className="py-3 px-6 text-left whitespace-nowrap">
+              <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={item.product.productImg} style={{borderRadius:"10px", width:"150px",height:"100px"}}/>
 
           
-              </td> */}
-              <td className="py-3 px-6 text-left">
-              {/* {item.product.titel} */}
+              </td> }
+              <td className="py-3 px-6 text-center">
+              {item.product.titel}
               </td>
               <td className="py-3 px-6 text-center">
-              {/* {item.product.price} */}
-              </td>
-              <td className="py-3 px-6 text-left">
+              {item.product.price}DH
+              </td> */}
+              <td className="py-3 px-6 text-center">
               {item.quantity}
               </td>
               <td className="py-3 px-6 text-center">

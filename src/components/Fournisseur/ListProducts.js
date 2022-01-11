@@ -108,7 +108,7 @@ const  ListProducts=()=> {
                   </li>
                     {/* Product link */}
                   <li>
-                    <Link to='/category' className="flex items-center px-4 py-2 text-gray-600 transition-transform transform rounded-md hover:translate-x-1 focus:ring focus:outline-none">
+                    <Link to='/listProduct' className="flex items-center px-4 py-2 text-gray-600 transition-transform transform rounded-md hover:translate-x-1 focus:ring focus:outline-none">
                       <span>
                         <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -154,7 +154,7 @@ const  ListProducts=()=> {
               <th className="py-3 px-6 text-left">Titel</th>
               <th className="py-3 px-6 text-center">Description</th>
               <th className="py-3 px-6 text-left"> Price</th>
-              <th className="py-3 px-6 text-left">Category</th>
+              {/* <th className="py-3 px-6 text-left">Category</th> */}
               <th className="py-3 px-6 text-center">Quantity</th>
               <th className="py-3 px-6 text-center">CurrentDate</th>
               <th className="py-3 px-6 text-center">Actions</th>
@@ -181,9 +181,9 @@ const  ListProducts=()=> {
               <td className="py-3 px-6 text-center">
               {item.price}
               </td>
-              <td className="py-3 px-6 text-left whitespace-nowrap">
+              {/* <td className="py-3 px-6 text-left whitespace-nowrap">
               {item.category.nameCategorie}
-              </td>
+              </td> */}
               <td className="py-3 px-6 text-left">
               {item.quantity}
               </td>

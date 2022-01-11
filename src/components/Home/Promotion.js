@@ -28,7 +28,7 @@ const Promotion=()=> {
     
 
     return (
-        <section className="text-gray-600 body-font bg-gray-200">
+        <section className="text-gray-600 body-font ">
         <Navbar/>
         {promo > 0  && 
  <div className="container px-5 py-24 mx-auto">
@@ -54,7 +54,7 @@ const Promotion=()=> {
 </div>
 }
 {promo == 0  && 
-  <img src={NoPromo} style={{width:'50%',marginLeft:'25%'}} />
+  <img src={NoPromo} style={{width:'40%',marginTop:'2%',marginLeft:'30%'}} />
 }
 <Footer/>
 </section>

@@ -51,22 +51,22 @@ useEffect(()=>{
    
 
     return (
-      <section className="text-gray-600 body-font bg-gray-200">
+      <section className="">
           <Navbar/>
   <div className="container px-5 py-24 mx-auto">
 
 
   {listProduct > 0  && 
 
-    <div className="flex flex-wrap -m-4">
+    <div className="flex flex-wrap -m-5">
     { products && products.map(item =>(
-      <div className="lg:w-1/5 md:w-1/2 ml-1 mt-4 p-4 " style={{background:'white',borderRadius:'7%',width:'19%'}}>
+      <div className="lg:w-1/5 md:w-1/2 ml-1 mt-5 p-5 " style={{background:'white',borderRadius:'0%',width:'19.7%',justifyContent:'space-around', marginTop:"7%"}}>
 
         <form onSubmit = {(e)=>{e.preventDefault();handleSubmit(item._id)}}>
         <a className="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={item.productImg} style={{borderRadius:"30px",height:'220px'}} />
+          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={item.productImg} style={{borderRadius:"0px",height:'220px'}} />
         </a>
-        <div className="mt-4">
+        <div className="mt-5">
          <h2 className="text-gray-500 text-xs tracking-widest title-font mb-1">{item.category.nameCategorie}</h2>
           <h2 className="text-gray-900 title-font text-lg font-medium">{item.titel}</h2>
           <p className="mt-1" style={{fontSize:'33px',color:'black'}}>{item.price} DH</p>
